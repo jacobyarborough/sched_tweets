@@ -34,3 +34,5 @@ RUN bundle install
 ENTRYPOINT ["bin/rails"]
 
 CMD ["s", "-b", "0.0.0.0"]
+
+EXPOSE 3000
