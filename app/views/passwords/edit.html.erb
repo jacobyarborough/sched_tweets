@@ -1,0 +1,26 @@
+<header>
+  <h1>Create a new account</h1>
+</header>
+<main>
+  <%= form_with model: current_user, url: passwords_path do |f| %>
+    <% if f.object.errors.any? %>
+      <% f.object.errors.full_messages.each do |message| %>
+        <div class="alert alert-danger"><%= message %></div>
+      <% end %>
+    <% end %>
+
+    <%# <div class="mb-3"> %>
+      <%# <%= f.label :password_challenge, "Current Password", class: "form-label" %>
+      <%# <%= f.text_field :password_challenge, class: "form-control" %>
+    <%# </div> %>
+    <div class="mb-3">
+      <%= f.label :password, "new password", class: "form-label" %>
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= f.label :password_confirmation, "password confirmation", class: "form-label" %>
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+    </div>
+      <%= f.submit "update Password", class: "btn btn-primary" %>
+    <% end %>
+</main>

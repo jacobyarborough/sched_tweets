@@ -1,0 +1,15 @@
+<header class="d-flex align-center justify-content-center">
+  <h1>
+    Welcome to the Scheduled Tweets app! Glad you could make it!
+  </h1>
+</header>
+<main class="d-flex align-center justify-content-center">
+  <section>
+    <p>
+      Let's get started scheduling some tweets!
+    </p>
+  </section>
+</main>
+<% if user_signed_in? %>
+  <%= button_to "Signup via Twitter", "/auth/twitter2", method: :post, data: { turbo: false }, class: "btn btn-primary" %>
+<% end %>

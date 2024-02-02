@@ -1,0 +1,18 @@
+<header>
+  <h1>Sign in to your account</h1>
+</header>
+<main>
+  <%= form_with url: sessions_path, method: :post do |f| %>
+    <div class="mb-3">
+      <%= f.label :email, "email", class: "form-label" %>
+      <%= f.text_field :email, class: "form-control", placeholder: "example@mail.com" %>
+    </div>
+    <div class="mb-3">
+      <%= f.label :password, "password", class: "form-label" %>
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+      <%= f.submit "Sign In", class: "btn btn-primary" %>
+  <% end %>
+
+  <%= link_to "Forgot your password?", new_password_resets_path %>
+</main>

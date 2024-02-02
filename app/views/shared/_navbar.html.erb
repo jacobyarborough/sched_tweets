@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <%= link_to "Scheduled Tweets", about_path, class: "navbar-brand" %>
+    <%# <a class="navbar-brand" href="/about">Scheduled Tweets</a> %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: "nav-link active" %>
+          <%# <a class="nav-link active" aria-current="page" href="/">Home</a> %>
+        </li>
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Edit Password", edit_passwords_path, class: "nav-link active" %>
+          </li>
+          <li>
+            <%= button_to "Log Out", sessions_path, method: :delete, class: "btn btn-outline-primary", type: "button" %>
+          </li>
+        <% else %>
+          <%= link_to "Sign Up", new_registrations_path, class: "nav-link active" %>
+          <%= link_to "Sign In", new_sessions_path, class: "nav-link active" %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
