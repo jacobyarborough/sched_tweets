@@ -1,26 +1,27 @@
-FROM ruby:3.3.0-alpine3.19
+FROM ruby:3.1.4-alpine3.19
 
-RUN apk add --update --virtual \
-&& apk add --no-cache gcompat \
-runtime-deps \
-postgresql-clinet \
-build-base \
-libxml2-dev \
-libxsl2-dev \
-nodejs \
-yarn \
-libffi-dev \
-readline \
-build-base \
-postgresql-dev \
-libc-dev \
-linux-headers \
-readline-dev \
-file \
-imagemagick \
-git \
-tzdata \
-&& rm -rf /var/cache/apk/*
+RUN apk update \
+  && apk upgrade \
+  && apk add --no-cache gcompat \
+  && apk add --virtual \
+  postgresql-client \
+  build-base \
+  libxml2-dev \
+  libxslt-dev \
+  nodejs \
+  yarn \
+  libffi-dev \
+  readline \
+  build-base \
+  postgresql-dev \
+  libc-dev \
+  linux-headers \
+  readline-dev \
+  file \
+  imagemagick \
+  git \
+  tzdata \
+  && rm -rf /var/cache/apk/*
 
 WORKDIR   /app
 
