@@ -11,7 +11,7 @@ class OmniauthCallbacksController < ApplicationController
     )
 
     flash[:notice] = "Successfully connected twitter account"
-    redirect_to root_path
+    redirect_to twitter_accounts_path
   end
 
   def auth
