@@ -51,6 +51,7 @@ gem "bootsnap", require: false
 gem 'jwt'
 gem 'omniauth-twitter2'
 gem 'omniauth-rails_csrf_protection'
+gem 'faraday'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
