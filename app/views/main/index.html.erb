@@ -11,5 +11,5 @@
   </section>
 </main>
 <% if user_signed_in? %>
-  <%= button_to "Signup via Twitter", "/auth/twitter2", method: :post, data: { turbo: false }, class: "btn btn-primary" %>
+  <%= button_to "Connect Twitter Account", "/auth/twitter2", method: :post, data: { turbo: false }, class: "btn btn-primary" %>
 <% end %>
