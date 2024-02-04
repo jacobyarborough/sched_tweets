@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   resource :passwords
 
   get '/auth/twitter2/callback', to: 'omniauth_callbacks#twitter2'
+
+  resources :twitter_accounts, only: [:index, :destroy] do
+    resources :tweets, only: [:index, :new, :create, :destroy]
+  end
 end
