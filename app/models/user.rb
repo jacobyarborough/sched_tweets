@@ -9,6 +9,7 @@ class User < ApplicationRecord
   # current_user.to_sgid()
   
   has_many :twitter_accounts
+  has_many :tweets
 
 
   def email=(value)
