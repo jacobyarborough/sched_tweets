@@ -12,9 +12,12 @@ jobs:
         environment: # add POSTGRES environment variables.
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: password
-          POSTGRES_DB: sched_tweets_test
+          POSTGRES_DB: sched_tweets_staging
     environment:
-      RAILS_ENV: test
+      RAILS_ENV: staging
+      PGHOST: 127.0.0.1
+      PGUSER: postgres
+      PGPASSWORD: password
     steps:
       - checkout
       - ruby/install-deps
