@@ -25,7 +25,6 @@ class ApplicationController < ActionController::Base
   helper_method :user_signed_in?
 
   def login(user)
-    binding.pry
     Current.user = user
     reset_session
     session[:user_id] = user.id

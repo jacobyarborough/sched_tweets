@@ -4,7 +4,7 @@ RSpec.describe 'New Regestration Page' do
   context 'when the form inputs are valid' do
     describe 'new user registration' do
       it 'allows users to fill in a form and sign up' do
-        visit new_registration_path
+        visit new_registrations_path
         fill_in("email", with: "new@mail.com")
         fill_in("password", with: "password")
         fill_in("password confirmation", with: "password")
@@ -19,7 +19,7 @@ RSpec.describe 'New Regestration Page' do
   context 'when the form inputs are invalid' do
     describe 'new user registration' do
       it 'should re-render the form with an error message' do
-        visit new_registration_path
+        visit new_registrations_path
         fill_in("email", with: "new@mail.com")
         fill_in("password", with: "password")
         click_on "Create User"

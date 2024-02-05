@@ -13,6 +13,8 @@ class User < ApplicationRecord
 
 
   def email=(value)
-    super(value.strip.downcase)
+    if value != nil
+      super(value.strip.downcase)
+    end
   end
 end
