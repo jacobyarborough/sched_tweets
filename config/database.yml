@@ -59,15 +59,12 @@ test:
   <<: *default
   database: sched_tweets_test
 
-circleci:
-  adapter: postgresql
-  encoding: unicode
-  database: postgres
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: postgres
-  password: password
-  host: localhost
-  port: 5432
+
+staging:
+  <<: *default
+  database: my_app_staging
+  host: 127.0.0.1
+
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
