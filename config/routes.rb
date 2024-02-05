@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get '/auth/twitter2/callback', to: 'omniauth_callbacks#twitter2'
 
   resources :twitter_accounts, only: [:index, :destroy] do
-    resources :tweets, only: [:index, :new, :create, :destroy]
+    resources :tweets, except: [:show]
+    get '/my_tweets', to: "tweets#my_tweets"
   end
+
+  # get '/twitter_accounts/:twitter_account_id/my_tweets', to: "tweets#my_tweets"
 end
