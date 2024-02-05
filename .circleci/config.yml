@@ -1,7 +1,7 @@
 # This config was automatically generated from your source code
 # Stacks detected: deps:ruby:.
 version: 2.1
-# orbs:
+orbs:
   ruby: circleci/ruby@2.0.1
 jobs:
   test-ruby:
