@@ -1,0 +1,16 @@
+<h1>Schedule a Tweet for <%= link_to "@#{@tweet.twitter_account.username}", "https://x.com/#{@tweet.twitter_account.username}", target: :_blank %></h1>
+
+<%= form_with model: @tweet, url: twitter_account_tweets_path(@tweet.twitter_account) do |f| %>
+  <%= render "shared/form_errors", f: f %>
+
+  <div class="mb-3 mt-3">
+    <%= f.label :body, class: "form-label" %>
+    <%= f.text_area :body, class: "form-control", placeholder: "Enter in the text of your tweet." %>
+  </div>
+    <%= f.label :publish_at, class: "form-label" %>
+    <%= f.datetime_local_field :publish_at, class: "form-control" %>
+  <div>
+  <div>
+    <%= f.submit "Schedule", class: "btn btn-primary mb-3 mt-3" %>
+  <div>
+<% end %>

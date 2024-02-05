@@ -1,0 +1,16 @@
+<h1>Edit Tweet</h1>
+
+<%= form_with model: @tweet, url: twitter_account_tweet_path(@tweet.twitter_account, @tweet), method: :patch do |f| %>
+  <%= render "shared/form_errors", f: f %>
+
+  <div class="mb-3 mt-3">
+    <%= f.label :body, class: "form-label" %>
+    <%= f.text_area :body, class: "form-control", placeholder: "Enter in the text of your tweet." %>
+  </div>
+    <%= f.label :publish_at, class: "form-label" %>
+    <%= f.datetime_local_field :publish_at, class: "form-control" %>
+  <div>
+  <div>
+    <%= f.submit "Update", class: "btn btn-primary mb-3 mt-3" %>
+  <div>
+<% end %>

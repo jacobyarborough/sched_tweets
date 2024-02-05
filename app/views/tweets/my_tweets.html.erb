@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-between align-items-center">
+  <h1>My Tweets</h1>
+</div>
+
+  <% @tweets.each do |tweet| %>
+    <article class="card w-50 p-3 mb-3 mt-3 text-bg-light">
+      <div class="card-body">
+        <% if tweet.published? %>
+          <h4 class="card-title">Published</h4>
+        <% else %>
+          <h4 class="card-title">Not Published</h4>
+        <% end %>  
+      
+        <h5 class="card-title">Body</h5>
+        <p class="card-text"><%= tweet.body %></h2>
+
+        <h5>Schedule Time</h5>
+        <p class="card-text"><%= l tweet.publish_at, format: :long %></p>
+
+        <% if !tweet.published? %>
+          <div class="d-flex">
+            <%= link_to "Edit", edit_twitter_account_tweet_path(tweet.twitter_account, tweet), style: "margin-right: 0.5rem", class: "btn btn-primary" %>
+            <%= button_to "Delete", twitter_account_tweet_path(tweet.twitter_account, tweet), method: :delete, form: { data: { turbo_confirm: 'Are you sure?' } }, class: "btn btn-danger ml-2" %>
+          </div>
+        <% end %>
+      </div>
+    </article>
+  <% end %>
